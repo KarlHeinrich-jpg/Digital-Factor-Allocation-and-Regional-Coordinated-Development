@@ -22,3 +22,7 @@ paper/manuscript.pdf
 # OS
 .DS_Store
 Thumbs.db
+
+# Submission artifacts (rebuilt on demand)
+submission_Economies_*.zip
+submission_Economies_*.pdf

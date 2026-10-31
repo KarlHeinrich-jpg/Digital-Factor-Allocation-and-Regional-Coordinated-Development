@@ -42,7 +42,7 @@ School of Economics, Beijing Technology and Business University, Beijing 100048,
 Correspondence: 2401050128@st.btbu.edu.cn}
 \corres{\hangafter=1 \hangindent=1.05em \hspace{-0.82em}Correspondence: 2401050128@st.btbu.edu.cn}
 
-\abstract{China's digital economy has grown rapidly, but whether digital factor allocation promotes regional coordinated development remains an open question. This study constructs a digital factor allocation (DFA) index covering digital infrastructure, digital industry, digital finance, and digital human capital, and a regional coordinated development (RCD) index covering economic, social, and urban-rural coordination for 30 Chinese provinces from 2013 to 2021. Using the entropy weight method and a Hansen panel threshold model, this study examines the nonlinear relationship between DFA and RCD. The results show that DFA is positively associated with RCD: the baseline two-way fixed-effects estimate is 0.241 (p < 0.05). The association is nonlinear. When per capita GDP exceeds the estimated threshold of 10.589 (about CNY 39,700), the marginal association rises from 0.506 to 0.677. A financial development threshold indicates that the marginal association declines at very high levels of financial depth, consistent with diminishing returns to digital finance. The association is strongest in western provinces, and channel analysis suggests that industrial upgrading, financial deepening, and technological investment are plausible mechanisms. These findings imply that digital factor policies should be sequenced with economic development, tailored to regional absorptive capacity, and accompanied by complementary reforms in advanced regions.}
+\abstract{China's digital economy has grown rapidly, but whether digital factor allocation promotes regional coordinated development remains an open question. This study builds a digital factor allocation (DFA) index covering digital infrastructure, digital industry, digital finance, and digital human capital, and a regional coordinated development (RCD) index covering economic, social, and urban-rural coordination, for 30 Chinese provinces from 2013 to 2021. Using entropy weights and a Hansen panel threshold model, we estimate the nonlinear relationship between the two indices. DFA is positively associated with RCD: the baseline two-way fixed-effects estimate is 0.241 (p < 0.05). When per capita GDP exceeds the estimated threshold of 10.589 (about CNY 39,700), the marginal association rises from 0.506 to 0.677; a financial development threshold indicates declining returns at very high levels of financial depth. The association is strongest in western provinces, and digital finance carries most of it. Both indices are strongly spatially clustered. Spatial specifications leave the threshold location unchanged but shrink the regime difference, so we read the nonlinearity as a development gradient rather than a sharp break; the positive association survives every specification. Digital factor policies should therefore be sequenced with economic development, tailored to regional absorptive capacity, and paired with complementary reforms in advanced regions.}
 
 \keyword{digital factor allocation; regional coordinated development; threshold effect; absorptive capacity; digital finance; China}
 
@@ -52,6 +52,7 @@ Correspondence: 2401050128@st.btbu.edu.cn}
 \input{sec2_lit}
 \input{sec3_data}
 \input{sec4_results}
+\input{sec4b_spatial}
 \input{sec5_discussion}
 \input{sec6_conclusion}
 
@@ -68,7 +69,7 @@ Correspondence: 2401050128@st.btbu.edu.cn}
 \noindent\textbf{Informed Consent Statement:} Not applicable.
 
 \vspace{6pt}
-\noindent\textbf{Data Availability Statement:} The provincial panel data are compiled from publicly available official yearbooks and the Peking University Digital Financial Inclusion Index. The analysis panel and replication code are available from the corresponding author upon reasonable request.
+\noindent\textbf{Data Availability Statement:} The provincial panel data are compiled from publicly available official yearbooks and the Peking University Digital Financial Inclusion Index. The analysis panel, the index construction scripts, and the replication code are available at \url{https://github.com/KarlHeinrich-jpg/Digital-Factor-Allocation-and-Regional-Coordinated-Development}.
 
 \vspace{6pt}
 \noindent\textbf{Conflicts of Interest:} The authors declare no conflict of interest.
@@ -89,6 +90,66 @@ Table~\ref{tab:weights} reports the within-dimension entropy weights for DFA and
 \begin{tablenotes}
 \small
 \item Notes: Panel A reports within-dimension entropy weights for DFA; each of the four dimensions receives a weight of 0.25 in the composite. Panel B reports global entropy weights for the ten RCD indicators, used in the entropy-weighted RCD robustness check.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Index Values by Province and Year}\label{app:values}
+
+Tables~\ref{tab:dfavalues} and~\ref{tab:rcdvalues} report the province-by-year values of the two composite indices. Provinces are grouped by region in the order used throughout the paper. The final columns report the province-level mean, the standard deviation over 2013--2021, and the change between 2013 and 2021; the bottom row reports the corresponding national figures. All values are reported to three decimal places.
+
+\begin{table}[H]
+\caption{Digital factor allocation (DFA) index values by province and year.}\label{tab:dfavalues}
+\begin{threeparttable}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.86}
+\input{tables/tableA2_dfa_values.tex}
+\begin{tablenotes}
+\footnotesize
+\item Notes: Values are the composite DFA index defined in Section~\ref{sec:data}. Mean and SD refer to the province's own 2013--2021 series; Change is the difference between 2021 and 2013. The national row reports the unweighted mean across the 270 province-year observations.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[H]
+\caption{Regional coordinated development (RCD) index values by province and year.}\label{tab:rcdvalues}
+\begin{threeparttable}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{0.86}
+\input{tables/tableA3_rcd_values.tex}
+\begin{tablenotes}
+\footnotesize
+\item Notes: Values are the baseline three-dimension RCD index defined in Section~\ref{sec:data}. Mean and SD refer to the province's own 2013--2021 series; Change is the difference between 2021 and 2013. The national row reports the unweighted mean across the 270 province-year observations.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Additional Mechanism and Specification Tables}\label{app:mechanisms}
+
+Table~\ref{tab:interaction} reports continuous moderation specifications, in which DFA is interacted with a centered moderator and the marginal effect of DFA is evaluated at the quartiles of the moderator. Table~\ref{tab:mediation} reports regime-specific mediation tests, estimated separately below and above the economic-development threshold of 10.589. The indirect effect is the product of the DFA-to-mediator path and the mediator-to-RCD path; the confidence interval is obtained from a province-level bootstrap with 300 replications.
+
+\begin{table}[H]
+\caption{Continuous moderation of the DFA--RCD association.}\label{tab:interaction}
+\begin{threeparttable}
+\small
+\input{tables/tableA4_interaction.tex}
+\begin{tablenotes}
+\small
+\item Notes: The dependent variable is RCD. All models include the DFA index, the centered moderator, their interaction, the four baseline controls, and province and year fixed effects. Marginal effects are evaluated at the quartiles of the moderator and their standard errors are computed from the full covariance matrix of the interaction model. $^{***}p<0.01$, $^{**}p<0.05$, $^{*}p<0.10$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[H]
+\caption{Regime-specific mediation tests.}\label{tab:mediation}
+\begin{threeparttable}
+\small
+\input{tables/tableA5_regime_mediation.tex}
+\begin{tablenotes}
+\small
+\item Notes: $a$ is the coefficient of DFA in the mediator equation, $b$ is the coefficient of the mediator in the RCD equation, and $a\times b$ is the indirect effect. Both equations include the four baseline controls and province and year fixed effects. Regimes are defined by the estimated threshold of 10.589 in log GDP per capita. The 95\% confidence interval is the percentile interval from a province-level bootstrap with 300 replications. $N$ is the number of province-year observations in the regime.
 \end{tablenotes}
 \end{threeparttable}
 \end{table}

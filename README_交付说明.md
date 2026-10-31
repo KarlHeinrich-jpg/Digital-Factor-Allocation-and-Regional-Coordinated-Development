@@ -4,7 +4,7 @@
 
 **目标期刊**：MDPI *Economies*
 
-**当前状态**：完整英文稿（MDPI LaTeX 模板，24 页，含 6 幅图、7 张正文表、1 张附录表、30 条参考文献）＋ 数据与复现代码。
+**当前状态**：完整英文稿（MDPI LaTeX 模板，28 页，含 8 幅图、11 张正文表、5 张附录表、30 条参考文献）＋ 数据与复现代码。
 
 ---
 
@@ -147,7 +147,21 @@ python src/07_main_results.py
 
 # 4. 图与 LaTeX 表
 python src/08_figures.py
+python src/08b_maps.py
 python src/09_make_latex_tables.py
+python src/12_bubble_figure.py        # Figure 3 气泡图
+python src/13_appendix_index_tables.py  # Table A2/A3 省级逐年指数值
+
+# 4b. 空间诊断、空间门槛、子维度与识别检验
+python src/14_spatial_diagnostics.py   # Table 8、Figure 8（LISA）
+python src/15_spatial_threshold.py     # Table 9
+python src/16_mechanism_extensions.py  # Table 10、A4、A5
+python src/17_endogeneity_checks.py    # Table 11
+python src/18_make_latex_spatial_tables.py
+python src/19_kde_figure.py           # 旧 2D 核密度（备份）
+python src/20_maps_6panel.py          # Figure 2 六联地图
+python src/21_composite_figure.py     # Figure 3 气泡+趋势合并
+python src/22_kde3d_figure.py         # Figure 4 三维核密度
 
 # 5. 编译黑白流程图（TikZ）
 cd paper/figures
