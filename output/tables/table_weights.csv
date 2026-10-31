@@ -1,0 +1,61 @@
+﻿index,dimension,indicator,weight_within
+DFA,digital infrastructure,dfa_ports_pc,0.05748583806910715
+DFA,digital infrastructure,dfa_optical,0.21076645437181216
+DFA,digital infrastructure,dfa_mobile,0.05560252612260593
+DFA,digital infrastructure,dfa_ipv4_pc,0.4139365742999413
+DFA,digital infrastructure,dfa_domain_pc,0.26220860713653343
+DFA,digital industry,dfa_software_gdp,0.3358966391371922
+DFA,digital industry,dfa_ecom_gdp,0.21390362500641777
+DFA,digital industry,dfa_ecom_firm,0.08514653079576212
+DFA,digital industry,dfa_website,0.04195681702972214
+DFA,digital industry,dfa_info_firm_pc,0.32309638803090573
+DFA,digital finance,dfa_dfi_coverage,0.30257530084935175
+DFA,digital finance,dfa_dfi_usage,0.3757122211024311
+DFA,digital finance,dfa_dfi_digit,0.3217124780482172
+DFA,digital human capital,dfa_ict_emp,0.7619038865419212
+DFA,digital human capital,dfa_internet,0.23809611345807885
+RCD,economic,rcd_pgdp,0.3955475636632012
+RCD,economic,rcd_retail_pc,0.3925840986495641
+RCD,economic,rcd_fiscal,0.21186833768723473
+RCD,social,rcd_income,0.3696523143761642
+RCD,social,rcd_beds,0.19831565464726322
+RCD,social,rcd_highered,0.18042536199322423
+RCD,social,rcd_social,0.2516066689833483
+RCD,urban-rural,rcd_urban,0.4134125710280636
+RCD,urban-rural,rcd_income_ratio,0.2510267980954514
+RCD,urban-rural,rcd_unemployment,0.33556063087648497
+RCD,infrastructure,rcd_gas,0.13611963991652692
+RCD,infrastructure,rcd_water,0.16764584732637655
+RCD,infrastructure,rcd_road,0.21343959192900208
+RCD,infrastructure,rcd_transit,0.48279492082809444
+RCD,ecology,rcd_green,0.12210052466232783
+RCD,ecology,rcd_forest,0.32148630946404955
+RCD,ecology,rcd_env_exp,0.2627463263382336
+RCD,ecology,rcd_wastewater,0.1079962605712689
+RCD,ecology,rcd_so2,0.06544660437051246
+RCD,ecology,rcd_energy,0.12022397459360763
+RCD_global10,all,rcd_pgdp,0.15748625416459894
+RCD_global10,all,rcd_retail_pc,0.15630635812371993
+RCD_global10,all,rcd_fiscal,0.08435483856716036
+RCD_global10,all,rcd_income,0.14976860007926907
+RCD_global10,all,rcd_beds,0.0803497146242664
+RCD_global10,all,rcd_highered,0.0731012706632819
+RCD_global10,all,rcd_social,0.10194114068469627
+RCD_global10,all,rcd_urban,0.08131487228507714
+RCD_global10,all,rcd_income_ratio,0.04937491856259455
+RCD_global10,all,rcd_unemployment,0.06600203224533545
+DFA_global_entropy,all,dfa_ports_pc,0.02813431481115857
+DFA_global_entropy,all,dfa_optical,0.10315183666279203
+DFA_global_entropy,all,dfa_mobile,0.02721259751573037
+DFA_global_entropy,all,dfa_ipv4_pc,0.20258592871529407
+DFA_global_entropy,all,dfa_domain_pc,0.1283282934921507
+DFA_global_entropy,all,dfa_software_gdp,0.10244588861365146
+DFA_global_entropy,all,dfa_ecom_gdp,0.0652389586205817
+DFA_global_entropy,all,dfa_ecom_firm,0.025969036284935083
+DFA_global_entropy,all,dfa_website,0.012796506136682982
+DFA_global_entropy,all,dfa_info_firm_pc,0.09854191058508358
+DFA_global_entropy,all,dfa_dfi_coverage,0.026043806659759815
+DFA_global_entropy,all,dfa_dfi_usage,0.03233897948257335
+DFA_global_entropy,all,dfa_dfi_digit,0.027691016268679494
+DFA_global_entropy,all,dfa_ict_emp,0.09106345815748106
+DFA_global_entropy,all,dfa_internet,0.028457467993445725

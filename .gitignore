@@ -1,0 +1,24 @@
+# Temporary downloads and OCR working files
+.tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+paper/figures/*.aux
+paper/figures/*.log
+
+# Local-only build copy (the named submission PDF is tracked)
+paper/manuscript.pdf
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,98 @@
+\documentclass[economies,article,submit]{Definitions/mdpi}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{ragged2e}
+
+\graphicspath{{figures/}}
+\renewcommand{\arraystretch}{0.95}
+\setlength{\tabcolsep}{4pt}
+
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\externaleditor{Firstname Lastname}
+\datereceived{}
+\daterevised{}
+\dateaccepted{}
+\datepublished{}
+
+\Title{Nonlinear Effects of Digital Factor Allocation on Regional Coordinated Development: Evidence from a Provincial Panel Threshold Model in China}
+
+\newcommand{\orcidauthorA}{0009-0004-5051-4277}
+\newcommand{\orcidauthorB}{0009-0005-2206-6857}
+\newcommand{\orcidauthorC}{0009-0008-3195-5631}
+\Author{Junfeng Wang \orcidA{}, Jiayi Wang \orcidB{} and Yile Wang *\orcidC{}}
+\AuthorNames{Junfeng Wang, Jiayi Wang and Yile Wang}
+\address[1]{School of Marxism, Beijing Technology and Business University, Beijing 100048, China; eventhat@btbu.edu.cn (J.W.)\\
+Digital College, Beijing Technology and Business University, Beijing 100048, China; 2401050126@st.btbu.edu.cn (J.W.)\\
+School of Economics, Beijing Technology and Business University, Beijing 100048, China; 2401050128@st.btbu.edu.cn (Y.W.)\
+Correspondence: 2401050128@st.btbu.edu.cn}
+\corres{\hangafter=1 \hangindent=1.05em \hspace{-0.82em}Correspondence: 2401050128@st.btbu.edu.cn}
+
+\abstract{China's digital economy has grown rapidly, but whether digital factor allocation promotes regional coordinated development remains an open question. This study constructs a digital factor allocation (DFA) index covering digital infrastructure, digital industry, digital finance, and digital human capital, and a regional coordinated development (RCD) index covering economic, social, and urban-rural coordination for 30 Chinese provinces from 2013 to 2021. Using the entropy weight method and a Hansen panel threshold model, this study examines the nonlinear relationship between DFA and RCD. The results show that DFA is positively associated with RCD: the baseline two-way fixed-effects estimate is 0.241 (p < 0.05). The association is nonlinear. When per capita GDP exceeds the estimated threshold of 10.589 (about CNY 39,700), the marginal association rises from 0.506 to 0.677. A financial development threshold indicates that the marginal association declines at very high levels of financial depth, consistent with diminishing returns to digital finance. The association is strongest in western provinces, and channel analysis suggests that industrial upgrading, financial deepening, and technological investment are plausible mechanisms. These findings imply that digital factor policies should be sequenced with economic development, tailored to regional absorptive capacity, and accompanied by complementary reforms in advanced regions.}
+
+\keyword{digital factor allocation; regional coordinated development; threshold effect; absorptive capacity; digital finance; China}
+
+\begin{document}
+
+\input{sec1_intro}
+\input{sec2_lit}
+\input{sec3_data}
+\input{sec4_results}
+\input{sec5_discussion}
+\input{sec6_conclusion}
+
+\vspace{6pt}
+\noindent\textbf{Author Contributions:} Conceptualization, J.W. (Junfeng Wang) and Y.W.; methodology, J.W. (Junfeng Wang); formal analysis, J.W. (Junfeng Wang); data curation, J.W. (Jiayi Wang); writing---original draft, J.W. (Junfeng Wang); writing---review and editing, J.W. (Jiayi Wang) and Y.W. All authors have read and agreed to the published version of the manuscript.
+
+\vspace{6pt}
+\noindent\textbf{Funding:} This research received no external funding.
+
+\vspace{6pt}
+\noindent\textbf{Institutional Review Board Statement:} Not applicable.
+
+\vspace{6pt}
+\noindent\textbf{Informed Consent Statement:} Not applicable.
+
+\vspace{6pt}
+\noindent\textbf{Data Availability Statement:} The provincial panel data are compiled from publicly available official yearbooks and the Peking University Digital Financial Inclusion Index. The analysis panel and replication code are available from the corresponding author upon reasonable request.
+
+\vspace{6pt}
+\noindent\textbf{Conflicts of Interest:} The authors declare no conflict of interest.
+
+\appendix
+\setcounter{section}{0}
+\setcounter{table}{0}
+\renewcommand{\thetable}{A\arabic{table}}
+\section{Index Weights}\label{app:weights}
+
+Table~\ref{tab:weights} reports the within-dimension entropy weights for DFA and the global entropy weights for RCD. The DFA index assigns equal weights to the four dimensions. The RCD baseline assigns equal weights to the three dimensions; the weights below refer to the global entropy-weighted alternative used in the robustness checks.
+
+\begin{table}[H]
+\caption{Entropy weights for DFA and RCD indicators.}\label{tab:weights}
+\begin{threeparttable}
+\small
+\input{tables/tableA1_weights.tex}
+\begin{tablenotes}
+\small
+\item Notes: Panel A reports within-dimension entropy weights for DFA; each of the four dimensions receives a weight of 0.25 in the composite. Panel B reports global entropy weights for the ten RCD indicators, used in the entropy-weighted RCD robustness check.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this paper, data, or code, please cite the working paper below."
+title: "Nonlinear Effects of Digital Factor Allocation on Regional Coordinated Development: Evidence from a Provincial Panel Threshold Model in China"
+authors:
+  - family-names: Wang
+    given-names: Junfeng
+  - family-names: Wang
+    given-names: Jiayi
+  - family-names: Wang
+    given-names: Yile
+    orcid: "https://orcid.org/0009-0008-3195-5631"
+year: 2026
+version: "1.0"
+date-released: 2026-10-31
+url: "https://github.com/KarlHeinrich-jpg/Digital-Factor-Allocation-and-Regional-Coordinated-Development"
+keywords:
+  - digital factor allocation
+  - regional coordinated development
+  - panel threshold model
+  - China
+  - digital finance
+license: CC-BY-4.0

@@ -1,0 +1,124 @@
+\section{Data, Variables, and Methods}\label{sec:data}
+
+\subsection{Study Area and Data}
+
+The analysis covers 30 provincial-level administrative units in mainland China from 2013 to 2021. Tibet, Hong Kong, Macao, and Taiwan are excluded because of data availability and comparability. The resulting panel is balanced, with 270 province-year observations. The sample starts in 2013 because the National Bureau of Statistics implemented a unified urban-rural household survey in that year, which makes the urban and rural income series comparable over the sample period.
+
+The data come from several official sources. Provincial economic, social, infrastructure, and environmental indicators are taken from the \emph{China Statistical Yearbook} (2014--2022), the \emph{China City Statistical Yearbook} (2014--2022), the \emph{China Environmental Statistics Yearbook}, and provincial statistical yearbooks \citep{nbs2022,nbscity2022}. The digital financial inclusion sub-indices are from the Peking University Digital Financial Inclusion Index \citep{pku2021,guo2020}. A small number of missing values were completed by linear interpolation within provinces. For the urban and rural income series, we cross-checked the extracted values against the accounting identity linking total disposable income to urban and rural incomes and the urbanization rate; cells that violated the identity by a wide margin were corrected against the original yearbook tables.
+
+\subsection{Digital Factor Allocation Index}
+
+DFA is measured with a four-dimension indicator system (Table~\ref{tab:indicators}). The four dimensions capture distinct aspects of digital factor allocation. Digital infrastructure measures the physical and network foundations that determine whether digital services can reach firms and households. Digital industry measures the scale and market application of digital production. Digital finance measures the coverage, intensity, and digitalization of financial services. Digital human capital measures the supply of workers who can use digital technologies productively.
+
+The 15 indicators are selected according to three criteria: relevance to the dimension, availability across all provinces and years, and consistency of statistical definitions. To avoid the criticism that a single composite index can be dominated by a few large provinces, the indicators are expressed as per capita, per GDP, or per area ratios where appropriate. The DFA index assigns equal weights to the four dimensions and uses the entropy method to weight indicators within each dimension. This design gives each factor category the same ex ante importance while letting the data determine the relative weight of indicators inside each category.
+
+\subsection{Regional Coordinated Development Index}
+
+RCD is measured with a three-dimension indicator system covering economic coordination, social coordination, and urban-rural coordination (Table~\ref{tab:indicators}). Economic coordination is measured by GDP per capita, retail sales per capita, and fiscal self-sufficiency. These indicators capture the level and sustainability of local economic development. Social coordination is measured by disposable income per capita, hospital beds per 10,000 people, higher-education students per 100,000 people, and the share of social security spending in fiscal expenditure. These indicators capture income, health, education, and social protection. Urban-rural coordination is measured by the urbanization rate, the urban-rural income ratio (a negative indicator), and the urban registered unemployment rate (a negative indicator). These indicators capture the balance between urban and rural areas and the stability of urban employment.
+
+The three dimensions receive equal weights, and the entropy method is used to weight indicators within each dimension. The baseline RCD index is therefore a weighted average of the three subsystem scores. In robustness checks, we also construct a five-dimension index that adds infrastructure and ecological coordination, a coupling coordination degree index for the three core dimensions, and a global entropy-weighted index using the ten core indicators. These alternatives allow us to examine whether the results depend on the choice of aggregation method.
+
+\begin{table}[htbp]
+\caption{Indicator systems for digital factor allocation (DFA) and regional coordinated development (RCD).}\label{tab:indicators}
+\footnotesize
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{5.0cm}c}
+\toprule
+Dimension & Indicator & Definition and unit & Sign \\
+\midrule
+\multicolumn{4}{l}{\textit{Panel A: Digital factor allocation (DFA)}} \\
+\midrule
+Digital infrastructure & Internet access ports per capita & Internet broadband access ports / year-end population (ports per person) & + \\
+ & Optical cable density & Long-distance optical cable length / land area (km/km$^2$) & + \\
+ & Mobile phone penetration & Mobile phone subscribers per 100 people & + \\
+ & IPv4 addresses per capita & IPv4 addresses / year-end population & + \\
+ & Domain names per capita & Registered domain names / year-end population & + \\
+Digital industry & Software revenue / GDP & Software business revenue / GDP (\%) & + \\
+ & E-commerce sales / GDP & E-commerce transaction value / GDP (\%) & + \\
+ & Firms with e-commerce & Share of enterprises with e-commerce transactions (\%) & + \\
+ & Websites per 100 firms & Number of websites per 100 enterprises & + \\
+ & Information firms per capita & Information enterprises / year-end population & + \\
+Digital finance & DFI coverage breadth & Peking University Digital Financial Inclusion Index sub-index & + \\
+ & DFI usage depth & Peking University Digital Financial Inclusion Index sub-index & + \\
+ & DFI digitization & Peking University Digital Financial Inclusion Index sub-index & + \\
+Digital human capital & ICT employment share & Employment in information transmission, computer services, and software / total urban employment (\%) & + \\
+ & Internet penetration & Internet users / year-end population (\%) & + \\
+\midrule
+\multicolumn{4}{l}{\textit{Panel B: Regional coordinated development (RCD)}} \\
+\midrule
+Economic coordination & GDP per capita & Regional GDP / year-end population (CNY/person) & + \\
+ & Retail sales per capita & Retail sales of consumer goods / year-end population (CNY/person) & + \\
+ & Fiscal self-sufficiency & Local fiscal revenue / local fiscal expenditure (\%) & + \\
+Social coordination & Disposable income per capita & All residents' per capita disposable income (CNY/person) & + \\
+ & Hospital beds & Hospital beds per 10,000 people & + \\
+ & Higher-education students & Higher-education students per 100,000 people & + \\
+ & Social security spending & Social security and employment expenditure / fiscal expenditure (\%) & + \\
+Urban-rural coordination & Urbanization rate & Urban resident population / year-end population (\%) & + \\
+ & Urban-rural income ratio & Urban disposable income / rural disposable income & $-$ \\
+ & Urban unemployment rate & Registered urban unemployment rate (\%) & $-$ \\
+\bottomrule
+\end{tabular}
+
+\noindent\footnotesize Notes: All indicators are compiled from the \emph{China Statistical Yearbook}, the \emph{China City Statistical Yearbook}, provincial statistical yearbooks, and the Peking University Digital Financial Inclusion Index. DFA assigns equal weights to the four dimensions and entropy weights to indicators within each dimension. RCD assigns equal weights to the three dimensions and entropy weights to indicators within each dimension.
+\end{table}
+
+\subsection{Entropy Weight Method}
+
+The entropy weight method is used to construct the composite indices. The method assigns larger weights to indicators with greater dispersion, on the grounds that they carry more information for distinguishing provinces. For indicator $j$ and province-year observation $i$, the raw value $x_{ij}$ is first winsorized at the 1st and 99th percentiles and then normalized. For positive indicators,
+\begin{equation}
+z_{ij}=\frac{x_{ij}-\min_i x_{ij}}{\max_i x_{ij}-\min_i x_{ij}},
+\end{equation}
+and for negative indicators,
+\begin{equation}
+z_{ij}=\frac{\max_i x_{ij}-x_{ij}}{\max_i x_{ij}-\min_i x_{ij}}.
+\end{equation}
+A small constant ($10^{-4}$) is added to avoid zeros. The normalized values are converted into proportions $p_{ij}=z_{ij}/\sum_i z_{ij}$, and the entropy of indicator $j$ is
+\begin{equation}
+e_j=-\frac{1}{\ln N}\sum_{i=1}^{N}p_{ij}\ln p_{ij},
+\end{equation}
+where $N$ is the number of observations. The weight of indicator $j$ is
+\begin{equation}
+w_j=\frac{1-e_j}{\sum_{k}(1-e_k)}.
+\end{equation}
+The composite score for observation $i$ is
+\begin{equation}
+S_i=\sum_j w_j z_{ij}.
+\end{equation}
+For DFA and RCD, the entropy weights are computed within each dimension, and the dimension scores are averaged with equal weights. This two-step procedure prevents a dimension with many indicators from receiving disproportionate weight in the overall index.
+
+\subsection{Baseline and Threshold Models}
+
+The baseline specification is a two-way fixed-effects model:
+\begin{equation}
+RCD_{it}=\alpha_0+\alpha_1 DFA_{it}+\gamma'X_{it}+\mu_i+\delta_t+\varepsilon_{it},
+\label{eq:baseline}
+\end{equation}
+where $i$ indexes provinces, $t$ indexes years, $\mu_i$ and $\delta_t$ are province and year fixed effects, $X_{it}$ is a vector of controls, and $\varepsilon_{it}$ is an error term clustered at the province level.
+
+To test H2 and H3, we estimate a Hansen (1999) panel threshold model:
+\begin{equation}
+RCD_{it}=\beta_0+\beta_1 DFA_{it}\cdot I(q_{it}\leq\gamma)
++\beta_2 DFA_{it}\cdot I(q_{it}>\gamma)
++\gamma'X_{it}+\mu_i+\varepsilon_{it},
+\label{eq:threshold}
+\end{equation}
+where $q_{it}$ is the threshold variable, $\gamma$ is the threshold value, and $I(\cdot)$ is the indicator function. The model allows the slope of DFA to differ between the low and high regimes. We estimate $\gamma$ by grid search over the inner 80\% of the threshold variable's distribution, which avoids small regimes at the tails. The null hypothesis of linearity is tested with a cluster wild bootstrap. The bootstrap generates $y^*=\hat{y}+\varepsilon^*$, where $\varepsilon^*$ is the fitted residual multiplied by a province-level Rademacher sign, and re-estimates the threshold and the $F$ statistic in each replication. The $p$-value is the fraction of bootstrap statistics that exceed the observed statistic. We also report the likelihood-ratio confidence interval for $\gamma$, using the critical value 7.35 for a 95\% interval \citep{hansen1999,hansen2000}.
+
+The threshold variable is economic development (log GDP per capita) for H2 and financial development for H3. We also report specifications using DFA itself, technological investment, and private economy vitality as threshold variables. These additional specifications help assess whether the nonlinearity is specific to the economic-development threshold or reflects a broader pattern.
+
+\subsection{Controls and Descriptive Statistics}
+
+The controls are selected to capture local conditions that may affect RCD but are not part of the RCD index. Government intervention is measured by the share of local government expenditure in GDP. It captures the role of fiscal policy in public-service provision and infrastructure investment. Foreign direct investment is measured by the log of realized FDI per capita. It captures external openness and technology transfer. Population density is measured by the log of year-end population per square kilometer. It captures agglomeration and the cost of service delivery. Private economy vitality is measured by the number of private enterprises per 10,000 people. It captures the local business environment and market development. The baseline controls therefore cover the fiscal, external, spatial, and market dimensions of local conditions without directly entering the RCD index.
+
+Table~\ref{tab:descriptives} reports the descriptive statistics. The DFA index has a mean of 0.259 and a standard deviation of 0.179, with a minimum of 0.007 and a maximum of 1.000. The RCD index has a mean of 0.357 and a standard deviation of 0.148, with a minimum of 0.083 and a maximum of 0.846. The urban-rural income ratio averages 2.53 and ranges from 1.84 to 3.56. The large variation in both indices is important for the threshold analysis: it implies that the sample contains provinces at very different stages of digital development and regional coordination.
+
+\begin{table}[htbp]
+\caption{Descriptive statistics.}\label{tab:descriptives}
+\begin{threeparttable}
+\small
+\input{tables/table2_descriptives.tex}
+\begin{tablenotes}
+\small
+\item Notes: The sample covers 30 provinces from 2013 to 2021 (N = 270). DFA is the digital factor allocation index; RCD is the regional coordinated development index; RCD5 is the five-dimension alternative; RCD-CCD is the coupling coordination degree of the three core dimensions. See Table~\ref{tab:indicators} for definitions.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
