@@ -1,4 +1,7 @@
 % Black-and-white conceptual framework, drawn with TikZ.
+% Layout adapted from the conceptual-model style of the reference
+% Sustainability paper: three column headers, dashed construct groups,
+% bold titles with italic descriptors, labelled wires, and a bottom band.
 % Compile: xelatex fig1_framework_tikz.tex
 \documentclass[border=8pt]{standalone}
 
@@ -14,44 +17,83 @@
 \begin{tikzpicture}[
   x=1cm, y=1cm,
   font=\footnotesize,
-  box/.style   = {draw, thin, align=center, fill=white,
-                  minimum height=10mm, inner sep=2.2mm},
-  head/.style  = {font=\small\bfseries, align=center},
-  arr/.style   = {-{Latex[length=2.2mm,width=1.6mm]}, thin},
-  darr/.style  = {-{Latex[length=2.2mm,width=1.6mm]}, thin, dashed},
-  note/.style  = {font=\scriptsize, align=left},
+  box/.style    = {draw, thin, align=center, fill=white,
+                   inner sep=2.1mm},
+  group/.style  = {draw, dashed, thin},
+  head/.style   = {font=\small\bfseries, align=center},
+  lab/.style    = {font=\scriptsize, align=left, fill=white, inner sep=1pt},
+  arr/.style    = {-{Latex[length=2.2mm,width=1.6mm]}, thin},
+  darr/.style   = {-{Latex[length=2.2mm,width=1.6mm]}, thin, dashed},
 ]
 
 % ---------------------------------------------------------------- headers
-\node[head] (lh) at (2.6,10.1) {Digital factor allocation (DFA)};
-\node[head] (rh) at (13.2,10.1) {Regional coordinated development (RCD)};
+\node[head] at (3.2,13.1) {Digital factor allocation (DFA)};
+\node[head] at (9.5,13.1) {Threshold conditions};
+\node[head] at (15.9,13.1) {Regional coordinated development (RCD)};
 
-% ---------------------------------------------------------------- left stack
-\node[box, minimum width=4.8cm] (i1) at (2.6,8.55) {Digital infrastructure};
-\node[box, minimum width=4.8cm] (i2) at (2.6,7.25) {Digital industry};
-\node[box, minimum width=4.8cm] (i3) at (2.6,5.95) {Digital finance};
-\node[box, minimum width=4.8cm] (i4) at (2.6,4.65) {Digital human capital};
+% ---------------------------------------------------------------- DFA group
+\draw[group] (0.25,4.35) rectangle (6.15,12.45);
+\node[box, text width=5.2cm, minimum height=1.55cm] (i1) at (3.2,11.2)
+  {\textbf{Digital infrastructure}\\[1pt]
+   \textit{network foundation}};
+\node[box, text width=5.2cm, minimum height=1.55cm] (i2) at (3.2,9.25)
+  {\textbf{Digital industry}\\[1pt]
+   \textit{digital output and e-commerce}};
+\node[box, text width=5.2cm, minimum height=1.55cm] (i3) at (3.2,7.30)
+  {\textbf{Digital finance}\\[1pt]
+   \textit{coverage, depth, digitalization}};
+\node[box, text width=5.2cm, minimum height=1.55cm] (i4) at (3.2,5.35)
+  {\textbf{Digital human capital}\\[1pt]
+   \textit{ICT employment and internet use}};
 
-% ---------------------------------------------------------------- right stack
-\node[box, minimum width=5.2cm] (o1) at (13.2,8.30) {Economic coordination};
-\node[box, minimum width=5.2cm] (o2) at (13.2,7.00) {Social coordination};
-\node[box, minimum width=5.2cm] (o3) at (13.2,5.70) {Urban-rural coordination};
+% ---------------------------------------------------------------- RCD group
+\draw[group] (13.0,6.0) rectangle (18.75,12.45);
+\node[box, text width=5.1cm, minimum height=1.55cm] (o1) at (15.9,10.8)
+  {\textbf{Economic coordination}\\[1pt]
+   \textit{income, retail sales, fiscal capacity}};
+\node[box, text width=5.1cm, minimum height=1.55cm] (o2) at (15.9,8.85)
+  {\textbf{Social coordination}\\[1pt]
+   \textit{income, health, education, social security}};
+\node[box, text width=5.1cm, minimum height=1.55cm] (o3) at (15.9,6.90)
+  {\textbf{Urban-rural coordination}\\[1pt]
+   \textit{urbanization, income gap, employment}};
 
-% ---------------------------------------------------------------- main path
-\draw[arr] (5.05,6.60) -- (10.55,6.60);
-\node[note] at (7.00,6.85) {H1 (+)};
+% ---------------------------------------------------------------- main H1 path
+\draw[arr] (6.15,7.85) -- (13.0,7.85);
+\node[lab] at (7.95,8.10) {H1 (+)};
 
-% ---------------------------------------------------------------- moderator
-\node[box, minimum width=4.8cm, minimum height=11mm] (thr) at (7.80,9.35)
-  {\textbf{Threshold:}\\economic development};
-\draw[darr] (8.20,8.80) -- (8.20,6.68);
-\node[note, anchor=west] at (8.35,7.80) {H2: weaker below\\stronger above};
+% ---------------------------------------------------------- threshold group
+\draw[group] (6.95,9.55) rectangle (12.05,12.45);
+\node[box, text width=4.4cm, minimum height=0.95cm] (t1) at (9.5,11.35)
+  {\textbf{Economic development}\\[0pt]
+   \textit{H2: stronger above the threshold}};
+\node[box, text width=4.4cm, minimum height=0.95cm] (t2) at (9.5,10.15)
+  {\textbf{Financial development}\\[0pt]
+   \textit{H3: diminishing at high depth}};
 
-% ---------------------------------------------------------------- mechanisms
-\node[box, minimum width=8.4cm, minimum height=13mm] (mech) at (7.80,2.55)
-  {\textbf{Mechanisms}\\industrial upgrading \(\cdot\) financial deepening \(\cdot\) technological investment};
-\draw[arr] (6.60,3.25) -- (6.60,6.52);
-\node[note, anchor=west] at (6.75,4.85) {H5: channels};
+% dashed moderator arrows, separated left/right
+\draw[darr] (8.35,10.87) -- (8.35,7.93);
+\node[lab] at (6.75,9.15) {H2: weaker below\\stronger above};
+\draw[darr] (10.65,9.67) -- (10.65,7.93);
+\node[lab, anchor=west] at (10.80,8.75) {H3: diminishing\\at high depth};
+
+% ---------------------------------------------------------- mechanism group
+\draw[group] (2.30,1.40) rectangle (14.60,3.45);
+\node[head, font=\scriptsize\bfseries] at (8.45,2.86) {Mechanisms (H5)};
+\node[box, text width=3.1cm, minimum height=0.78cm] (m1) at (4.25,2.15)
+  {\textbf{Industrial upgrading}};
+\node[box, text width=3.1cm, minimum height=0.78cm] (m2) at (8.45,2.15)
+  {\textbf{Financial deepening}};
+\node[box, text width=3.1cm, minimum height=0.78cm] (m3) at (12.65,2.15)
+  {\textbf{Technological investment}};
+\draw[arr] (12.65,3.45) -- (12.65,7.78);
+\node[lab, anchor=west] at (12.80,5.30) {H5: channels};
+
+% ---------------------------------------------------------------- bottom band
+\node[draw, dashed, thin, text width=17.9cm, align=center,
+      inner sep=2.2mm, font=\scriptsize] (band) at (9.5,0.10)
+  {\textbf{H4: regional heterogeneity.} The DFA--RCD association is stronger in the western region;
+   the economic-development threshold is consistent with an absorptive-capacity interpretation.};
 
 \end{tikzpicture}
 \end{document}
