@@ -374,17 +374,19 @@ pdflatex manuscript.tex
 ```text
 main  e4c51e6  Initial public release (v1.0, tag v1.0)
 v2    b671c4f  Redesign Figure 1 as a reference-style black-and-white conceptual model
+v3    c7ce712  Add spatial, sub-dimension, and identification analyses for the Economies submission
 ```
 
-- 当前本地分支：`v2`，工作区有未提交改动：`paper/manuscript.tex`、`paper/sec4_results.tex`、`paper/manuscript_MDPI_Economies.pdf`、`README_交付说明.md` 被修改；`src/12_bubble_figure.py`、`src/13_appendix_index_tables.py`、`paper/figures/fig_bubble.png/pdf`、`paper/tables/tableA2_dfa_values.tex`、`tableA3_rcd_values.tex`、`src/08b_maps.py`、`HANDOFF.md` 为未跟踪文件。**没有 commit、没有 push。**
-- `main` = v1.0：公开仓库的初始版本，Figure 1 还是**旧版**；没有 `requirements.txt`/`CHANGELOG.md`。
-- `v2` = 新 Figure 1 + requirements + changelog；**尚未合并到 main**。
-- **用户要求：后面先不要动 GitHub**。因此：
-  - 不要 `git push`
-  - 不要创建/合并 PR
-  - 不要改 repo 设置/Release
-  - 不要 `git push --force`
-- 如果用户以后要求更新公开仓库：先把 `src/08b_maps.py` commit 到 `v2`，再 PR `v2 → main`，合并后打 `v2.0` tag/release。不要在未授权时做。
+- **当前本地分支：`v3`，已推送到 GitHub（`origin/v3`），工作区干净。**
+- `main` = v1.0：公开仓库的初始版本，Figure 1 仍是旧版，没有 `requirements.txt`/`CHANGELOG.md`。
+- `v2` = 新 Figure 1 + requirements + changelog，**尚未合并到 main**。
+- `v3` = 2026-11-01 投稿版：空间分析、子维度、识别检验、图件重排、参考文献英文化、正文压缩。**尚未合并到 main，也没有开 PR。**
+- **用户已于 2026-11-01 明确授权推送当前版本**，`v3` 是经授权的。但**仍未经授权做以下操作**：
+  - 合并 `v3 → main`（需要用户再次确认，通常用 PR）
+  - 打 tag / 建 Release（例如 `v3.0`）
+  - `git push --force`
+  - 改仓库设置
+- 如果用户以后要求把投稿版变成正式版：开 PR `v3 → main`，审核合并后打 `v3.0` tag，并把 `submission_Economies_Latex.zip` 挂到 Release 资产上（zip 本身不入库，已在 `.gitignore` 中）。
 - 仓库 URL：`https://github.com/KarlHeinrich-jpg/Digital-Factor-Allocation-and-Regional-Coordinated-Development`
 - 注意：用户曾在聊天里贴过一个 GitHub PAT，已暴露；建议撤销/轮换。**不要把任何 token 写进仓库或脚本。**
 
